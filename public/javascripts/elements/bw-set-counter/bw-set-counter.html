@@ -1,0 +1,29 @@
+<link rel="import" href="../../bower/polymer/polymer.html">
+
+<polymer-element name="bw-set-counter" on-tap="{{counterTapped}}" attributes="targets" horizontal layout center center-justified>
+  <template>
+    <style>
+    :host {
+      display: inline-block;
+      color: white;
+      font-family: Arial;
+      font-size: 20pt;
+      background: red;
+      width: 50px;
+      height: 50px;
+      margin-left: 1px;
+      margin-right: 1px;
+      border-radius: 50%;
+      border: 1px solid gray;
+    }
+    :host([idle]) {
+      background: white;
+      color: gray;
+    }
+    </style>
+
+    {{achieved}}
+
+  </template>
+  <script src="bw-set-counter.js" type="text/javascript" charset="utf-8"></script>
+</polymer-element>

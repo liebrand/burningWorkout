@@ -3,6 +3,11 @@ html
   head
     title= title
     meta(name='viewport', content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes')
+    meta(http-equiv="cache-control" content="max-age=0")
+    meta(http-equiv="cache-control" content="no-cache")
+    meta(http-equiv="expires" content="0")
+    meta(http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT")
+    meta(http-equiv="pragma" content="no-cache")
 
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascripts/bower/platform/platform.js')
@@ -12,5 +17,9 @@ html
     link(rel='import', href='/javascripts/bower/core-header-panel/core-header-panel.html')
     link(rel='import', href='/javascripts/bower/core-toolbar/core-toolbar.html')
     link(rel='import', href='/javascripts/bower/paper-tabs/paper-tabs.html')
+
+    link(rel='import', href='/javascripts/elements/all.html')
+
+
   body(unresolved)
     block content

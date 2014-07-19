@@ -1,0 +1,39 @@
+<link rel="import" href="../../bower/polymer/polymer.html">
+
+<link rel="import" href="../../bower/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../../bower/core-animated-pages/transitions/slide-from-right.html">
+
+<link rel="import" href="../bw-exercise/bw-exercise.html">
+
+<polymer-element name="bw-workout" attributes="name">
+  <template>
+    <style>
+    :host {
+      display: block;
+      background-color: white;
+      padding: 20px;
+      width: 90%;
+      font-family: Arial;
+      font-size: 10pt;
+      font-weight: 300;
+    }
+    </style>
+
+
+
+    <core-animated-pages id="exercises" transitions="slide-from-right">
+      <template repeat="{{exercise in exerciseData}}">
+        <section>
+          <div horizontal layout center center-justified>
+            <bw-exercise
+              exercise="{{exercise}}"
+              on-exercise-done="{{onExerciseDone}}"></exercise>
+          </div>
+        </section>
+      </template>
+    </core-animated-pages>
+
+
+  </template>
+  <script src="bw-workout.js" type="text/javascript" charset="utf-8"></script>
+</polymer-element>

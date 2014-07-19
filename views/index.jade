@@ -3,6 +3,11 @@ extends layout
 block content
   core-header-panel
     core-toolbar
-      paper-tabs(valueattr="name", selected="all", self-end)
-        paper-tab(name="all") Dashboard
-        paper-tab(name="favorites") Settings
+      paper-tabs(valueattr="name", selected="dashboard", self-end)
+        paper-tab(name="dashboard") Dashboard
+        paper-tab(name="workouts") My workouts
+        paper-tab(name="exercises") Exercise Library
+        paper-tab(name="settings") Settings
+
+    jelte-test
+

@@ -1,0 +1,59 @@
+<link rel="import" href="../../bower/polymer/polymer.html">
+
+<link rel="import" href="../../bower/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../../bower/core-animated-pages/transitions/slide-from-right.html">
+
+
+<polymer-element name="jelte-test" attributes="name">
+  <template>
+
+    <style>
+      #ex1 {
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+      #ex2 {
+        width: 100px;
+        height: 100px;
+        background: blue;
+      }
+    </style>
+
+    <core-animated-pages id="pages" transitions="slide-from-right">
+      <section>
+        <div id="ex1" layout vertical center center-justified></div>
+      </section>
+      <section>
+        <div id="ex2" layout vertical center center-justified></div>
+      </section>
+    </core-animated-pages>
+
+  </template>
+  <script type="text/javascript" charset="utf-8">
+  Polymer('jelte-test', {
+    ready: function() {
+      document.addEventListener('click', function(e) {
+        console.log('x');
+        // debugger;
+        this.$.pages.selected = (this.$.pages.selected + 1) % this.$.pages.children.length;
+      }.bind(this));
+
+    }
+  });
+
+
+  </script>
+</polymer-element>
+
+
+
+
+
+
+
+
+
+
+
+

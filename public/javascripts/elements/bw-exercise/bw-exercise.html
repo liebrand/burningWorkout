@@ -1,0 +1,54 @@
+<link rel="import" href="../../bower/polymer/polymer.html">
+<link rel="import" href="../../bower/paper-button/paper-button.html">
+
+<link rel="import" href="../bw-set-counter/bw-set-counter.html">
+
+<polymer-element name="bw-exercise" attributes="exercise">
+  <template>
+    <style>
+    :host {
+      display: block;
+      background-color: white;
+      border: 1px solid green;
+      margin: 20px;
+      width: 300px;
+      height: 460px;
+      position: relative;
+    }
+    .exercise-img {
+      width: 100px;
+      height: 100px;
+    }
+    .exercise-container {
+      position: relative;
+      width: 100%;
+      border: 1px solid red;
+    }
+    </style>
+
+    <div>{{exercise.name}}</div>
+
+      <div vertical layout center fit>
+
+        <template repeat="{{exercise in exercise.exercises}}">
+          <div class="exercise-container" flex vertical layout center center-justified>
+            <div >{{exercise.name}}</div>
+            <img class="exercise-img" src="{{exercise.img}}"></img>
+            <div horizontal layout center center-justified>
+              <template repeat="{{set in exercise.sets}}">
+                <bw-set-counter type="{{exercise.type}}" targets="{{set}}" idle></bw-set-counter>
+              </template>
+            </div>
+
+          </div>
+        </template>
+
+        <div horizontal justified justified layout>
+          <paper-button id="hard-button" label="HARD" raisedbutton on-tap="{{exerciseDone}}"></paper-button>
+          <paper-button id="easy-button" label="easy" raisedbutton on-tap="{{exerciseDone}}"></paper-button>
+        </div>
+      </div>
+
+  </template>
+  <script src="bw-exercise.js" type="text/javascript" charset="utf-8"></script>
+</polymer-element>
